@@ -65,27 +65,11 @@ export default function Home() {
       })
       .catch(err => console.log({err}));
   };
-  const GET_DOGS = gql`
-    {
-      allPlanets {
-        totalCount
-        planets {
-          name
-          filmConnection {
-            totalCount
-            films {
-              episodeID
-            }
-          }
-        }
-      }
-    }
-  `;
-  const {loadingg, error, data} = useQuery(GET_DOGS);
 
   if (loading) {
     return <Text>Loading...</Text>;
   }
+  
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
